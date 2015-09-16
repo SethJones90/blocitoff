@@ -3,11 +3,11 @@ Rails.application.routes.draw do
   devise_for :users
   get 'welcome/about'
 
-  resources :users
-
-  authenticate(:user) do
-    get '/users', to: 'users#show'
+  resources :users do
+    resources :items, only: [:new, :create]
   end
+
+ 
   root to: 'welcome#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
