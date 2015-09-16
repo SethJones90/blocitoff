@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     else
       @user = current_user
     end
-
+    @item = Item.new
     @items = @user.items
   end
 end

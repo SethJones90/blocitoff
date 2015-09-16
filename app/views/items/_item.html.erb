@@ -1,0 +1,6 @@
+<% @items.each do |item| %>
+<div class="row">
+  <div class="col-md-3"><%= item.name %></div>
+  <div class="col-md-3"><%= link_to "", user_item_path(item.user, item), method: :delete, class: 'glyphicon glyphicon-ok' %></div>
+</div>
+<% end %>

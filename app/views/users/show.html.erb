@@ -1,10 +1,7 @@
 <h1>Hello, <%= @user.name %></h1>
 
 <h4>Your to-do list items</h4>
-<% @items.each do |item| %>
-<div>
-  <p><%= item.name %></p>
-</div>
-<% end %>
 
-<%# render partial: 'items/form', locals: { item: @item } %>
+<%= render partial: 'items/item', locals: { item: @item } %>
+
+<%= render partial: 'items/form', locals: { item: @item } %>
