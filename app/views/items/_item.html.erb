@@ -1,6 +1,12 @@
+<div class="row">
+  <div class="col-md-3"><h4>Item Name:</h4></div>
+  <div class="col-md-3"><h4>Completed?</h4></div>
+  <div class="col-md-3"><h4>Days left:</h4></div>
+</div>
 <% @items.each do |item| %>
 <div class="row">
   <div class="col-md-3"><%= item.name %></div>
   <div class="col-md-3"><%= link_to "", user_item_path(item.user, item), data: { confirm: 'Are you sure?' }, method: :delete, class: 'glyphicon glyphicon-ok' %></div>
+  <div class="col-md-3"><%= item.days_left %></div>
 </div>
 <% end %>
