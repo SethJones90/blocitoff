@@ -22,6 +22,8 @@ end
 
  gem 'whenever', :require => false
 
+gem 'active_model_serializers', '0.9.2'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
