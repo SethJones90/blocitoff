@@ -1,5 +1,8 @@
+
 <%= form_for [@user, @item] do |f| %>
   <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.submit "Create Item" %>
+  <div class="form-group">
+    <%= f.text_field :name %>
+  </div>
+  <%= f.submit "Create Item", class: 'btn btn-success' %>
 <% end %>
