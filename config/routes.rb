@@ -7,6 +7,12 @@ Rails.application.routes.draw do
     resources :items, only: [:new, :create, :destroy]
   end
 
+  namespace :api, defaults: { format: :json } do
+    resources :users do
+      resources :items 
+    end
+  end
+
  
   root to: 'welcome#index'
 
