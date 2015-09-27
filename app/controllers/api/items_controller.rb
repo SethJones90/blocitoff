@@ -30,6 +30,15 @@ class Api::ItemsController < ApiController
     render :json => {}, :status => :not_found
   end
 
+  def update
+    item = Item.find(params[:id])
+    if item.update(item_params)
+      render json: item
+    else
+      render json: { errors: list.errors.full_messages }, status: :unprocessable_entity
+    end
+  end
+
   private
   def item_params
     params.require(:item).permit(:name)
